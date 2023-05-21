@@ -35,6 +35,9 @@ MaterialApp myLandingPageWeb() => MaterialApp(
       title: 'Landing Page',
       home: Scaffold(
         appBar: AppBar(
+          leading: Image.asset('/images/logo.png', fit: BoxFit.cover),
+          title: const Text("Cleocell Eletronicos e Acessórios"),
+          backgroundColor: Colors.black87,
           toolbarHeight: 70,
           actions: [
             Container(
@@ -45,11 +48,14 @@ MaterialApp myLandingPageWeb() => MaterialApp(
                 child: MenuButton("Cadastrar")),
           ],
         ),
+        body: Column(
+          children: [],
+        ),
       ),
     );
 
 class MenuButton extends StatelessWidget {
-  MenuButton(this.textButton);
+  MenuButton(this.textButton, {super.key});
 
   String textButton;
 
@@ -61,11 +67,12 @@ class MenuButton extends StatelessWidget {
               side: const BorderSide(color: Colors.black12))),
           elevation: const MaterialStatePropertyAll(5.0),
           minimumSize: const MaterialStatePropertyAll<Size>(Size(150, 0)),
-          backgroundColor: const MaterialStatePropertyAll(Colors.grey)),
+          backgroundColor: const MaterialStatePropertyAll(Colors.yellowAccent)),
       onPressed: null,
       child: Text(
         textButton,
-        style: const TextStyle(color: Colors.black),
+        style:
+            const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
       ));
 }
 
