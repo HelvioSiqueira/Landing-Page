@@ -51,10 +51,13 @@ MaterialApp myLandingPageWeb() => MaterialApp(
                 child: MenuButton("Cadastrar")),
           ],
         ),
-        body: Column(
-          children: [
-            MyForm(),
-          ],
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              MyForm(),
+            ],
+          )
         ),
       ),
     );
