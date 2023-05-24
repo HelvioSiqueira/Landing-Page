@@ -54,6 +54,7 @@ MaterialApp myLandingPageWeb() => MaterialApp(
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               MyForm(),
             ],

@@ -8,7 +8,8 @@ class MyForm extends StatefulWidget {
 }
 
 class _MyForm extends State {
-  var marginFormFields = 50.0;
+  var marginFormFields = 20.0;
+  var marginQuestionFields = 25.0;
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   var _radioUseValue = 1;
@@ -20,17 +21,24 @@ class _MyForm extends State {
 
   @override
   Widget build(BuildContext context) => Container(
-        padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 400),
+        margin: const EdgeInsets.symmetric(vertical: 0, horizontal: 400),
+        padding: const EdgeInsets.symmetric(horizontal: 30),
+        color: Colors.grey,
         child: Form(
           key: _formKey,
           child: Column(
             children: [
               Container(
-                margin: EdgeInsets.symmetric(vertical: marginFormFields),
+                margin: EdgeInsets.only(bottom: marginQuestionFields),
                 child: Column(
                   children: [
-                    const Text("Digite o seu email: ",
-                        style: TextStyle(fontSize: 25)),
+                    Container(
+                      margin:
+                          EdgeInsets.symmetric(vertical: marginQuestionFields),
+                      alignment: Alignment.centerLeft,
+                      child: const Text("Digite o seu email: ",
+                          style: TextStyle(fontSize: 25)),
+                    ),
                     TextFormField(
                       keyboardType: TextInputType.emailAddress,
                       validator: (String? inValue) {
@@ -41,8 +49,9 @@ class _MyForm extends State {
                         }
                         return null;
                       },
-                      decoration:
-                          const InputDecoration(hintText: "example@gmail.com"),
+                      decoration: const InputDecoration(
+                          hintText: "example@gmail.com",
+                          border: OutlineInputBorder()),
                     ),
                   ],
                 ),
@@ -51,9 +60,13 @@ class _MyForm extends State {
                 margin: EdgeInsets.symmetric(vertical: marginFormFields),
                 child: Column(
                   children: [
-                    const Text(
-                      "Qual seu uso geral para seu computador ou notebook?",
-                      style: TextStyle(fontSize: 25),
+                    Container(
+                      margin: EdgeInsets.only(bottom: marginQuestionFields),
+                      alignment: Alignment.centerLeft,
+                      child: const Text(
+                        "Qual seu uso geral para seu computador ou notebook?",
+                        style: TextStyle(fontSize: 25),
+                      ),
                     ),
                     Row(
                       children: [
@@ -141,9 +154,13 @@ class _MyForm extends State {
                 margin: EdgeInsets.symmetric(vertical: marginFormFields),
                 child: Column(
                   children: [
-                    const Text(
-                        "Quanto tempo você fica diariamente no computador?(Em horas)",
-                        style: TextStyle(fontSize: 25)),
+                    Container(
+                      margin: EdgeInsets.only(bottom: marginQuestionFields),
+                      alignment: Alignment.centerLeft,
+                      child: const Text(
+                          "Quanto tempo você fica diariamente no computador?(Em horas)",
+                          style: TextStyle(fontSize: 25)),
+                    ),
                     TextFormField(
                       keyboardType: TextInputType.text,
                       validator: (String? inValue) {
@@ -154,6 +171,9 @@ class _MyForm extends State {
                         }
                         return null;
                       },
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder()
+                      ),
                     )
                   ],
                 ),
@@ -162,9 +182,13 @@ class _MyForm extends State {
                 margin: const EdgeInsets.symmetric(vertical: 50),
                 child: Column(
                   children: [
-                    const Text(
-                      " Você lida com tamanho arquivos muito grandes?",
-                      style: TextStyle(fontSize: 25),
+                    Container(
+                      margin: EdgeInsets.only(bottom: marginQuestionFields),
+                      alignment: Alignment.centerLeft,
+                      child: const Text(
+                        "Você lida com tamanho arquivos muito grandes?",
+                        style: TextStyle(fontSize: 25),
+                      ),
                     ),
                     Row(
                       children: [
@@ -203,8 +227,13 @@ class _MyForm extends State {
                 margin: EdgeInsets.symmetric(vertical: marginFormFields),
                 child: Column(
                   children: [
-                    const Text("Você precisa de seu computador fora de casa?",
-                        style: TextStyle(fontSize: 25)),
+                    Container(
+                      margin: EdgeInsets.only(bottom: marginQuestionFields),
+                      alignment: Alignment.centerLeft,
+                      child: const Text(
+                          "Você precisa de seu computador fora de casa?",
+                          style: TextStyle(fontSize: 25)),
+                    ),
                     Row(
                       children: [
                         Radio(
@@ -242,8 +271,13 @@ class _MyForm extends State {
                 margin: EdgeInsets.symmetric(vertical: marginFormFields),
                 child: Column(
                   children: [
-                    const Text("Qual seu grau de conhecimento em computador?",
-                        style: TextStyle(fontSize: 25)),
+                    Container(
+                      margin: EdgeInsets.only(bottom: marginQuestionFields),
+                      alignment: Alignment.centerLeft,
+                      child: const Text(
+                          "Qual seu grau de conhecimento em computador?",
+                          style: TextStyle(fontSize: 25)),
+                    ),
                     Row(
                       children: [
                         Radio(
@@ -296,9 +330,13 @@ class _MyForm extends State {
                 margin: EdgeInsets.symmetric(vertical: marginFormFields),
                 child: Column(
                   children: [
-                    const Text(
-                      "Qual a marca do seu notebook ou processador?",
-                      style: TextStyle(fontSize: 25),
+                    Container(
+                      margin: EdgeInsets.only(bottom: marginQuestionFields),
+                      alignment: Alignment.centerLeft,
+                      child: const Text(
+                        "Qual a marca do seu notebook ou processador?",
+                        style: TextStyle(fontSize: 25),
+                      ),
                     ),
                     TextFormField(
                       keyboardType: TextInputType.text,
@@ -310,6 +348,9 @@ class _MyForm extends State {
                         }
                         return null;
                       },
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder()
+                      ),
                     )
                   ],
                 ),
