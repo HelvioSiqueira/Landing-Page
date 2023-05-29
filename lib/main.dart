@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:landing_page/carousel_image.dart';
 
 import 'form.dart';
 import 'meu_button.dart';
@@ -37,6 +38,7 @@ class _MyLandingPage extends State {
 MaterialApp myLandingPageWeb() => MaterialApp(
       title: 'Landing Page',
       home: Scaffold(
+        backgroundColor: Colors.black87,
         appBar: AppBar(
           leading: Image.asset('/images/logo.png', fit: BoxFit.cover),
           title: const Text("Cleocell Eletronicos e Acessórios"),
@@ -52,16 +54,18 @@ MaterialApp myLandingPageWeb() => MaterialApp(
           ],
         ),
         body: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              MyForm(),
-            ],
-          )
-        ),
+            scrollDirection: Axis.vertical,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(bottom: 10),
+                  child: const MyCarousel(),
+                ),
+                const MyForm(),
+              ],
+            )),
       ),
     );
-
 
 MaterialApp myLandingPageMob() => MaterialApp();

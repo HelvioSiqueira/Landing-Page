@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyForm extends StatefulWidget {
-  MyForm({Key? key}) : super(key: key);
+  const MyForm({Key? key}) : super(key: key);
 
   @override
   _MyForm createState() => _MyForm();
@@ -23,7 +23,7 @@ class _MyForm extends State {
   Widget build(BuildContext context) => Container(
         margin: const EdgeInsets.symmetric(vertical: 0, horizontal: 400),
         padding: const EdgeInsets.symmetric(horizontal: 30),
-        color: Colors.grey,
+        color: Colors.white,
         child: Form(
           key: _formKey,
           child: Column(
@@ -145,7 +145,9 @@ class _MyForm extends State {
                             return null;
                           },
                           decoration: const InputDecoration(
-                              hintText: "", labelText: ""),
+                              border: OutlineInputBorder(),
+                              hintText: "",
+                              labelText: ""),
                         ))
                   ],
                 ),
@@ -171,9 +173,8 @@ class _MyForm extends State {
                         }
                         return null;
                       },
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder()
-                      ),
+                      decoration:
+                          const InputDecoration(border: OutlineInputBorder()),
                     )
                   ],
                 ),
@@ -348,11 +349,31 @@ class _MyForm extends State {
                         }
                         return null;
                       },
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder()
-                      ),
+                      decoration:
+                          const InputDecoration(border: OutlineInputBorder()),
                     )
                   ],
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.all(20),
+                child: SizedBox(
+                  width: 500,
+                  height: 60,
+                  child: ElevatedButton(
+                    onPressed: null,
+                    style: ButtonStyle(
+                        shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20.0),
+                            side: const BorderSide(color: Colors.black12))),
+                        backgroundColor:
+                        const MaterialStatePropertyAll(Colors.yellowAccent)),
+                    child: const Text(
+                      "Enviar",
+                      style: TextStyle(
+                          color: Colors.black87, fontWeight: FontWeight.bold),
+                    ),
+                  ),
                 ),
               )
             ],
